@@ -1,0 +1,28 @@
+Steps.txt
+
+cd "/Users/i337529/OneDrive - SAP SE/docker/2022/dpagent"
+
+
+
+git init
+git add -A
+git commit -m "wip"
+git branch -M main
+git remote add origin https://github.com/amacdexp/dpagent.git
+git push -u origin main
+
+git commit -a -m "WIP"; git push;
+
+
+
+
+
+docker login -u amacdexp
+
+
+docker build -t amacdexp/nfs-server-s3-support . 
+
+docker run -t -i amacdexp/nfs-server-s3-support /bin/bash
+
+
+docker push amacdexp/nfs-server-s3-support:latest

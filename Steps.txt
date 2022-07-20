@@ -2,7 +2,10 @@ Steps.txt
 
 cd "/Users/i337529/OneDrive - SAP SE/docker/2022/dpagent"
 
+git config --global user.email "aron.macdonald01@sap.com"
+git config --global user.name "amacdexp"
 
+#git pull https://github.com/amacdexp/dpagent.git
 
 git init
 git add -A
@@ -14,15 +17,32 @@ git push -u origin main
 git commit -a -m "WIP"; git push;
 
 
+git pull origin main --allow-unrelated-histories
+
+
+git reset
+
+git commit -a -m "WIP"; git push;
+
 
 
 
 docker login -u amacdexp
 
 
+docker build -t amacdexp/dpagent  .  --build-arg arg=1
+docker build -t amacdexp/dpagent  . 
+
+
 docker build -t amacdexp/nfs-server-s3-support . 
 
-docker run -t -i amacdexp/nfs-server-s3-support /bin/bash
+docker run -t -i amacdexp/dpagent /bin/bash
 
 
 docker push amacdexp/nfs-server-s3-support:latest
+
+
+
+https://tools.hana.ondemand.com/additional/installer.DPAgent-2.6.2-ntamd64.zip
+
+cp "/Users/i337529/Downloads/installer.DPAgent-2.6.2-ntamd64.zip" "/Users/i337529/OneDrive - SAP SE/docker/2022/dpagent/downloads/."
